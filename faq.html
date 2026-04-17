@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FAQ - Hallee Jenkins Photography</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="site-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="prices.html">Prices</a></li>
+        <li><a href="about.html">Get to Know Me</a></li>
+        <li><a href="book.html">Book a Shoot</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container faq-shell">
+    <section class="faq-hero hero-card">
+      <p class="eyebrow">FAQ</p>
+      <h2>Frequently Asked Questions</h2>
+      <p>Everything you need to know before your session. If your question is not here, I would love to help through the booking page.</p>
+      <a class="button button-primary" href="book.html">Ask a Question</a>
+    </section>
+
+    <section class="faq-grid" aria-label="Frequently asked questions">
+      <article class="faq-item">
+        <h3>Where do you recommend I take my photos?</h3>
+        <p>I love locations with natural light and simple backgrounds, like mountain overlooks, open fields, beaches, and classic city streets. Once you book, I can suggest specific spots based on your style and the look you want.</p>
+      </article>
+
+      <article class="faq-item">
+        <h3>What should I wear for my session?</h3>
+        <p>Neutral tones, soft earth colors, and simple textures photograph beautifully. Avoid loud logos and super busy patterns. I can help you choose outfits that coordinate well and feel natural in photos.</p>
+      </article>
+
+      <article class="faq-item">
+        <h3>How long does it take to get my photos back?</h3>
+        <p>Most galleries are delivered within 1-2 weeks depending on season and session type. I always do my best to deliver as quickly as possible while keeping editing quality high.</p>
+      </article>
+
+      <article class="faq-item">
+        <h3>What if we feel awkward in front of the camera?</h3>
+        <p>That is completely normal and one of the most common concerns people have. I guide posing the whole time with easy prompts so you feel comfortable, relaxed, and confident.</p>
+      </article>
+
+      <article class="faq-item">
+        <h3>Can I bring outfit changes or props?</h3>
+        <p>Yes. Outfit changes and a few meaningful props can add variety and personality to your gallery. Bring options, and we can choose what works best once we are on location.</p>
+      </article>
+
+      <article class="faq-item">
+        <h3>What happens if weather is bad?</h3>
+        <p>If weather is too windy, stormy, or dark, we can reschedule to make sure you get the best possible photos. I will stay in communication with you ahead of time and make it easy.</p>
+      </article>
+
+      <article class="faq-item">
+        <h3>How can I start learning photography?</h3>
+        <p>Start by learning your camera basics, practicing in natural light, and shooting often. This video is a great place to begin:</p>
+        <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;margin-top:0.6rem;">
+          <iframe
+            src="https://www.youtube.com/embed/V7z7BAZdt2M?si=dwjLUK5XxmfWPq1h"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+            style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;">
+          </iframe>
+        </div>
+      </article>
+    </section>
+
+    <section class="faq-tableau-card" aria-label="Tableau embed section">
+      <h3>What are photography locations near me?</h3>
+      <div class='tableauPlaceholder' id='viz1776266303024' style='position: relative'>
+        <noscript>
+          <a href='#'>
+            <img alt=' ' src='https://public.tableau.com/static/images/Bo/Book10_17762662177820/Sheet1/1_rss.png' style='border: none' />
+          </a>
+        </noscript>
+        <object class='tableauViz' style='display:none;'>
+          <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+          <param name='embed_code_version' value='3' />
+          <param name='site_root' value='' />
+          <param name='name' value='Book10_17762662177820/Sheet1' />
+          <param name='tabs' value='no' />
+          <param name='toolbar' value='yes' />
+          <param name='static_image' value='https://public.tableau.com/static/images/Bo/Book10_17762662177820/Sheet1/1.png' />
+          <param name='animate_transition' value='yes' />
+          <param name='display_static_image' value='yes' />
+          <param name='display_spinner' value='yes' />
+          <param name='display_overlay' value='yes' />
+          <param name='display_count' value='yes' />
+          <param name='language' value='en-US' />
+          <param name='filter' value='publish=yes' />
+        </object>
+      </div>
+      <script type='text/javascript'>
+        (function () {
+          var divElement = document.getElementById('viz1776266303024');
+          if (!divElement) return;
+          var vizElement = divElement.getElementsByTagName('object')[0];
+          if (!vizElement) return;
+          vizElement.style.width = '100%';
+          vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+          var scriptElement = document.createElement('script');
+          scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+          vizElement.parentNode.insertBefore(scriptElement, vizElement);
+        })();
+      </script>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Hallee Jenkins Photography</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

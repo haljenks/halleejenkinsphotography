@@ -1,0 +1,161 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Prices - Hallee Jenkins Photography</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="site-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="prices.html">Prices</a></li>
+        <li><a href="about.html">Get to Know Me</a></li>
+        <li><a href="book.html">Book a Shoot</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <header class="prices-hero">
+      <h2>Prices</h2>
+      <p>Simple, transparent pricing to suit different needs.</p>
+    </header>
+
+    <section class="prices-section">
+      <div class="card-grid">
+        <article class="card">
+          <h3>Family Shoot</h3>
+          <p><strong>Duration:</strong> 1 hour</p>
+          <p><strong>Photos:</strong> 40-50 photos</p>
+          <p><strong>Price:</strong> $150</p>
+          <p>Family photos, sibling photos, parents, kids, couples, and individuals all in one.</p>
+        </article>
+
+        <article class="card">
+          <h3>Individual Shoot</h3>
+          <p><strong>Duration:</strong> 45 minutes</p>
+          <p><strong>Photos:</strong> 40-60 photos</p>
+          <p><strong>Price:</strong> $75</p>
+          <p>Perfect for graduation, branding, or just for fun.</p>
+        </article>
+
+        <article class="card">
+          <h3>Couples Shoot</h3>
+          <p><strong>Duration:</strong> 1 hour</p>
+          <p><strong>Photos:</strong> 40-60 photos</p>
+          <p><strong>Price:</strong> $100</p>
+          <p>Perfect for engagement pictures or just capturing your love.</p>
+        </article>
+
+        <article class="card">
+          <h3>School Dance Shoot</h3>
+          <p><strong>Duration:</strong> 1 hour</p>
+          <p><strong>Photos:</strong> Varies</p>
+          <p><strong>Price:</strong> $15 per couple (4-16 couples)</p>
+          <p>Capture the night with quick posed and candid shots.</p>
+        </article>
+
+        <article class="card">
+          <h3>Friends</h3>
+          <p><strong>Duration:</strong> 1.5 hours</p>
+          <p><strong>Photos:</strong> Varies</p>
+          <p><strong>Price:</strong> $20-$25 per person (2-10 people)</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="inquiry-section">
+      <div class="inquiry-box" style="margin-top:1.25rem;background:var(--surface);padding:1rem;border-radius:10px;border:1px solid var(--border)">
+        <h4>Inquire about anything else</h4>
+        <form id="inquiry-form" style="display:grid;gap:0.6rem;max-width:720px">
+          <input type="text" name="_honey" style="display:none" />
+          <input type="hidden" name="_subject" value="Photography Inquiry from website" />
+          <label>Purpose / What you'd like:<textarea name="purpose" id="purpose" rows="2" placeholder="Briefly describe the shoot" required></textarea></label>
+          <label>Desired duration:<input name="duration" id="duration" placeholder="e.g. 1 hour, 45 minutes" required /></label>
+          <label>Number of photos wanted:<input name="photos" id="photos" placeholder="e.g. 40-60" required /></label>
+          <label>Number of people:<input name="people" id="people" placeholder="e.g. 2, 4, 6" required /></label>
+          <label>Phone number:<input name="phone" id="phone" placeholder="Phone number (include country code if needed)" /></label>
+          <label>Email address:<input type="email" name="email" id="email" placeholder="you@example.com" required /></label>
+          <label>Preferred contact method:
+            <select name="contact_method" id="contact_method">
+              <option value="email">Email</option>
+              <option value="phone">Phone</option>
+            </select>
+          </label>
+          <label>Additional desires or descriptions (optional):<textarea name="details" id="details" rows="3" placeholder="Styling, locations, special requests (optional)"></textarea></label>
+          <div style="display:flex;gap:0.6rem;align-items:center">
+            <button type="submit" style="width:fit-content;padding:0.5rem 0.8rem;border-radius:8px;background:var(--accent);border:none;color:#fff;font-weight:700">Submit Inquiry</button>
+            <span id="inquiry-status" style="color:var(--muted)"></span>
+          </div>
+        </form>
+
+        <p style="margin-top:0.75rem;font-size:0.95rem;color:var(--muted)">All wedding and bridal pricing will be received through an inquiry.</p>
+      </div>
+    </section>
+
+    <script>
+      (function(){
+        const form = document.getElementById('inquiry-form');
+        const status = document.getElementById('inquiry-status');
+        form.addEventListener('submit', async function(e){
+          e.preventDefault();
+          status.style.color = 'var(--muted)';
+          status.textContent = ' Sending...';
+          const formData = new FormData(form);
+          formData.append('page_url', window.location.href);
+
+          try{
+            const res = await fetch('https://formsubmit.co/ajax/hallee.jenkins04@gmail.com', {
+              method: 'POST',
+              body: formData,
+              headers: { 'Accept': 'application/json' }
+            });
+            const json = await res.json();
+            if(json.success === 'true' || res.ok){
+              status.style.color = 'green';
+              status.textContent = ' Inquiry sent - thank you! Please check your email for confirmation.';
+              form.reset();
+            } else {
+              throw new Error('Submission failed');
+            }
+          }catch(err){
+            status.style.color = 'crimson';
+            status.textContent = ' Submission failed. As a fallback your email client will open.';
+            const purpose = document.getElementById('purpose').value.trim();
+            const duration = document.getElementById('duration').value.trim();
+            const photos = document.getElementById('photos').value.trim();
+            const people = document.getElementById('people').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const contact = document.getElementById('contact_method').value;
+            const details = document.getElementById('details').value.trim();
+            let body = '';
+            body += 'Purpose: ' + purpose + '\n\n';
+            body += 'Desired duration: ' + duration + '\n\n';
+            body += 'Number of photos wanted: ' + photos + '\n\n';
+            body += 'Number of people: ' + people + '\n\n';
+            body += 'Phone: ' + phone + '\n\n';
+            body += 'Email: ' + email + '\n\n';
+            body += 'Preferred contact method: ' + contact + '\n\n';
+            body += 'Additional details: ' + details + '\n\n';
+            body += 'Submitted from: ' + window.location.href + '\n';
+            const mailto = 'mailto:hallee.jenkins04@gmail.com?subject=' + encodeURIComponent('Photography Inquiry') + '&body=' + encodeURIComponent(body);
+            window.location.href = mailto;
+          }
+        });
+      })();
+    </script>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Hallee Jenkins Photography</p>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

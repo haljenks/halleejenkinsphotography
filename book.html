@@ -1,0 +1,207 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Book a Shoot - Hallee Jenkins Photography</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="site-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="prices.html">Prices</a></li>
+        <li><a href="about.html">Get to Know Me</a></li>
+        <li><a href="book.html">Book a Shoot</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h2>Book a Shoot</h2>
+    <p>Fill this out and I will reach out to confirm details and availability.</p>
+
+    <section class="inquiry-section">
+      <div class="inquiry-box" style="margin-top:1.25rem;background:var(--surface);padding:1rem;border-radius:10px;border:1px solid var(--border)">
+        <h4>Booking Inquiry</h4>
+        <form id="booking-form" style="display:grid;gap:0.6rem;max-width:720px">
+          <input type="text" name="_honey" style="display:none" />
+          <input type="hidden" name="_subject" value="Booking Inquiry from website" />
+
+          <label>Package:
+            <select name="package" id="package" required>
+              <option value="" selected disabled>Select a package</option>
+              <option value="Family Shoot">Family Shoot</option>
+              <option value="Individual Shoot">Individual Shoot</option>
+              <option value="Couples Shoot">Couples Shoot</option>
+              <option value="School Dance Shoot">School Dance Shoot</option>
+              <option value="Friends">Friends</option>
+              <option value="Other">Other</option>
+            </select>
+          </label>
+
+          <label>Purpose / What you'd like:<textarea name="purpose" id="purpose" rows="2" placeholder="Briefly describe the shoot" required></textarea></label>
+          <label>Desired duration:<input name="duration" id="duration" placeholder="e.g. 1 hour, 45 minutes" required /></label>
+          <label>Number of photos wanted:<input name="photos" id="photos" placeholder="e.g. 40-60" required /></label>
+          <label>Number of people:<input name="people" id="people" placeholder="e.g. 2, 4, 6" required /></label>
+          <label>Phone number:<input name="phone" id="phone" placeholder="Phone number (include country code if needed)" /></label>
+          <label>Email address:<input type="email" name="email" id="email" placeholder="you@example.com" required /></label>
+          <label>Preferred contact method:
+            <select name="contact_method" id="contact_method">
+              <option value="email">Email</option>
+              <option value="phone">Phone</option>
+            </select>
+          </label>
+          <label>Preferred date(s):
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;margin-top:0.3rem">
+              <input type="date" id="preferred-date" />
+              <button type="button" id="add-date-btn" style="padding:0.45rem 0.7rem;border-radius:8px;border:1px solid var(--border);background:#fff;cursor:pointer">Add date</button>
+            </div>
+            <small style="color:var(--muted)">Select one or more dates that work best for you.</small>
+            <div id="selected-dates" style="display:flex;gap:0.45rem;flex-wrap:wrap;margin-top:0.45rem"></div>
+            <input type="hidden" name="preferred_dates" id="preferred_dates" />
+          </label>
+          <label>Additional desires or descriptions (optional):<textarea name="details" id="details" rows="3" placeholder="Styling, locations, special requests (optional)"></textarea></label>
+          <div style="display:flex;gap:0.6rem;align-items:center">
+            <button type="submit" style="width:fit-content;padding:0.5rem 0.8rem;border-radius:8px;background:var(--accent);border:none;color:#fff;font-weight:700">Submit Booking Inquiry</button>
+            <span id="booking-status" style="color:var(--muted)"></span>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <script>
+      (function(){
+        const form = document.getElementById('booking-form');
+        const status = document.getElementById('booking-status');
+        const dateInput = document.getElementById('preferred-date');
+        const addDateBtn = document.getElementById('add-date-btn');
+        const selectedDatesEl = document.getElementById('selected-dates');
+        const preferredDatesInput = document.getElementById('preferred_dates');
+        const selectedDates = new Set();
+
+        function formatDate(isoDate){
+          const [year, month, day] = isoDate.split('-');
+          return month + '/' + day + '/' + year;
+        }
+
+        function renderSelectedDates(){
+          selectedDatesEl.innerHTML = '';
+          const sorted = Array.from(selectedDates).sort();
+          preferredDatesInput.value = sorted.map(formatDate).join(', ');
+
+          sorted.forEach(function(isoDate){
+            const chip = document.createElement('span');
+            chip.style.display = 'inline-flex';
+            chip.style.alignItems = 'center';
+            chip.style.gap = '0.35rem';
+            chip.style.padding = '0.3rem 0.5rem';
+            chip.style.borderRadius = '999px';
+            chip.style.border = '1px solid var(--border)';
+            chip.style.background = '#fff';
+            chip.textContent = formatDate(isoDate);
+
+            const removeBtn = document.createElement('button');
+            removeBtn.type = 'button';
+            removeBtn.textContent = 'x';
+            removeBtn.setAttribute('aria-label', 'Remove date ' + formatDate(isoDate));
+            removeBtn.style.border = 'none';
+            removeBtn.style.background = 'transparent';
+            removeBtn.style.cursor = 'pointer';
+            removeBtn.style.fontWeight = '700';
+            removeBtn.style.color = 'var(--accent)';
+            removeBtn.addEventListener('click', function(){
+              selectedDates.delete(isoDate);
+              renderSelectedDates();
+            });
+
+            chip.appendChild(removeBtn);
+            selectedDatesEl.appendChild(chip);
+          });
+        }
+
+        addDateBtn.addEventListener('click', function(){
+          if(!dateInput.value) return;
+          selectedDates.add(dateInput.value);
+          renderSelectedDates();
+          dateInput.value = '';
+        });
+
+        dateInput.addEventListener('keydown', function(e){
+          if(e.key === 'Enter'){
+            e.preventDefault();
+            addDateBtn.click();
+          }
+        });
+
+        form.addEventListener('submit', async function(e){
+          e.preventDefault();
+          if(selectedDates.size === 0){
+            status.style.color = 'crimson';
+            status.textContent = ' Please add at least one preferred date.';
+            return;
+          }
+          status.style.color = 'var(--muted)';
+          status.textContent = ' Sending...';
+          const formData = new FormData(form);
+          formData.append('page_url', window.location.href);
+
+          try{
+            const res = await fetch('https://formsubmit.co/ajax/hallee.jenkins04@gmail.com', {
+              method: 'POST',
+              body: formData,
+              headers: { 'Accept': 'application/json' }
+            });
+            const json = await res.json();
+            if(json.success === 'true' || res.ok){
+              status.style.color = 'green';
+              status.textContent = ' Inquiry sent - thank you! Please check your email for confirmation.';
+              form.reset();
+              selectedDates.clear();
+              renderSelectedDates();
+            } else {
+              throw new Error('Submission failed');
+            }
+          }catch(err){
+            status.style.color = 'crimson';
+            status.textContent = ' Submission failed. As a fallback your email client will open.';
+            const pkg = document.getElementById('package').value;
+            const purpose = document.getElementById('purpose').value.trim();
+            const duration = document.getElementById('duration').value.trim();
+            const photos = document.getElementById('photos').value.trim();
+            const people = document.getElementById('people').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const contact = document.getElementById('contact_method').value;
+            const preferredDates = preferredDatesInput.value.trim();
+            const details = document.getElementById('details').value.trim();
+            let body = '';
+            body += 'Package: ' + pkg + '\n\n';
+            body += 'Purpose: ' + purpose + '\n\n';
+            body += 'Desired duration: ' + duration + '\n\n';
+            body += 'Number of photos wanted: ' + photos + '\n\n';
+            body += 'Number of people: ' + people + '\n\n';
+            body += 'Phone: ' + phone + '\n\n';
+            body += 'Email: ' + email + '\n\n';
+            body += 'Preferred contact method: ' + contact + '\n\n';
+            body += 'Preferred date(s): ' + preferredDates + '\n\n';
+            body += 'Additional details: ' + details + '\n\n';
+            body += 'Submitted from: ' + window.location.href + '\n';
+            const mailto = 'mailto:hallee.jenkins04@gmail.com?subject=' + encodeURIComponent('Booking Inquiry') + '&body=' + encodeURIComponent(body);
+            window.location.href = mailto;
+          }
+        });
+      })();
+    </script>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Hallee Jenkins Photography</p>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Get to Know Me - Hallee Jenkins Photography</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="site-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="prices.html">Prices</a></li>
+        <li><a href="about.html">Get to Know Me</a></li>
+        <li><a href="book.html">Book a Shoot</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+      <section class="hero-card about-card">
+      <p class="eyebrow">About Me</p>
+      <h2>Hi, I'm Hallee!</h2>
+      <p class="about-intro">I am a Utah-based photographer who loves creating images that feel warm, natural, and full of personality. I want your session to feel easy and fun, so you can actually enjoy the moment while we capture it.</p>
+
+      <h3 class="about-subhead">A Few Things I Love</h3>
+      <ul class="about-list">
+        <li>Sunset light, beach evenings, and mountain views</li>
+        <li>Traveling, meeting new people, and exploring new places</li>
+        <li>Music, crafts, dogs, and quality time with family and friends</li>
+        <li>Creating photos that feel true to you, not overly posed</li>
+        <li>Helping you feel confident and comfortable in front of the camera</li>
+      </ul>
+
+      <section class="about-photo-layout" aria-label="About Hallee photos">
+        <figure class="about-photo about-photo-main-focus">
+          <img src="IMG_0225.jpeg" alt="Hallee holding her camera on the beach at night" loading="lazy" decoding="async">
+        </figure>
+        <figure class="about-photo about-photo-small about-photo-side-top">
+          <img src="IMG_1270.jpeg" alt="Hallee photographing in a mountain meadow" loading="lazy" decoding="async">
+        </figure>
+        <figure class="about-photo about-photo-small about-photo-last-focus about-photo-side-bottom">
+          <img src="IMG_3431.jpeg" alt="Hallee with a friend reviewing photos on a camera" loading="lazy" decoding="async">
+        </figure>
+      </section>
+      <section class="about-links-card" aria-label="Extra links">
+        <h3>Explore More</h3>
+        <div class="about-links-row">
+          <a class="button button-secondary" href="resume.html">View my resume</a>
+          <a class="button button-primary" href="editing-game.html">Play my editing game</a>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Hallee Jenkins Photography</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

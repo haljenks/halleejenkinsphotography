@@ -1,0 +1,240 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gallery - Hallee Jenkins Photography</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="site-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="prices.html">Prices</a></li>
+        <li><a href="about.html">Get to Know Me</a></li>
+        <li><a href="book.html">Book a Shoot</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container gallery-shell">
+    <section class="gallery-intro">
+      <p class="eyebrow">Instagram Highlights</p>
+      <h2>Latest Work</h2>
+      <p>A curated look at recent sessions from my Instagram feed. Tap any image to view the original post.</p>
+      <a class="text-link" href="https://www.instagram.com/hallee.jenkins.photography?igsh=a29heTZxbzlxbjJj&utm_source=qr" target="_blank" rel="noopener noreferrer">View Full Instagram</a>
+    </section>
+
+    <section id="galleryGrid" class="gallery-grid" aria-label="Photography gallery"></section>
+
+    <a class="back-link" href="index.html">Back to Home</a>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Hallee Jenkins Photography</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const photos = [
+    {
+        "src":  "https://scontent-lax7-1.cdninstagram.com/v/t51.82787-15/669757909_18103300961489795_734288999293824530_n.jpg?stp=dst-jpg_e35_tt6\u0026_nc_cat=111\u0026ig_cache_key=Mzg3NDA5ODA2MDQ5Nzg0NDE3Ng%3D%3D.3-ccb7-5\u0026ccb=7-5\u0026_nc_sid=58cdad\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTkyMC5zZHIuQzMifQ%3D%3D\u0026_nc_ohc=xOlFdDztDk4Q7kNvwEBcGwl\u0026_nc_oc=AdqIFIRG_qfMUp3cKmy0-31nNdXtTp1MsR9Y30gjhTFxLlPmc6PFnyBFI_huygKhnGW9pUwgLCqu4xMvtGazB049\u0026_nc_ad=z-m\u0026_nc_cid=0\u0026_nc_zt=23\u0026_nc_ht=scontent-lax7-1.cdninstagram.com\u0026_nc_gid=olbgeH9KZHoT8H3f71Imig\u0026_nc_ss=7a32e\u0026oh=00_Af0yuVtg9k3M53sgE7Hb50DKf1pvxfbaBmKkazhlYf1ZCA\u0026oe=69E245FB",
+        "post":  "https://www.instagram.com/p/DXDkBrgFJZn/",
+        "width":  1440,
+        "height":  1920
+    },
+    {
+        "src":  "https://scontent-lax3-2.cdninstagram.com/v/t51.82787-15/670163453_18103300811489795_1917807549818078250_n.jpg?stp=dst-jpg_e35_tt6\u0026_nc_cat=100\u0026ig_cache_key=Mzg3NDA5Nzg5Mzk2NzE2MTgwOQ%3D%3D.3-ccb7-5\u0026ccb=7-5\u0026_nc_sid=58cdad\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTkyMC5zZHIuQzMifQ%3D%3D\u0026_nc_ohc=dV7iDDgkCzQQ7kNvwG6j6EX\u0026_nc_oc=AdqszuS5U1sEK-iHKV3Qwzz-GY6chk2uwPrV7VHZoysGx-B2vHK_Knk4VTDe-oXO0uwL_1wzqdkjIKnG7Qon0dcc\u0026_nc_ad=z-m\u0026_nc_cid=0\u0026_nc_zt=23\u0026_nc_ht=scontent-lax3-2.cdninstagram.com\u0026_nc_gid=Mk04qduom4h_LGyD01TZEg\u0026_nc_ss=7a32e\u0026oh=00_Af1-6-syo16FR2axhc2rX6by6RtdV7IUyWZO85KQ5_lWdA\u0026oe=69E232D3",
+        "post":  "https://www.instagram.com/p/DXDkBrgFJZn/",
+        "width":  1440,
+        "height":  1920
+    },
+    {
+        "src":  "https://scontent-lax7-1.cdninstagram.com/v/t51.82787-15/588163724_18088021457489795_975096974417865779_n.jpg?stp=dst-jpg_e35_tt6\u0026_nc_cat=105\u0026ig_cache_key=Mzc3NzM4MDA3ODM4OTkzNDAyMQ%3D%3D.3-ccb7-5\u0026ccb=7-5\u0026_nc_sid=58cdad\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTkyMC5zZHIuQzMifQ%3D%3D\u0026_nc_ohc=mYoCR6NzNC8Q7kNvwGuiYmy\u0026_nc_oc=Adr3c_3DmI8A2CcyidKljfzyT_-iZMoJpyoJ8MWICfRYRODnQon5vKdPYftHEo5cOo03JSQlvET0WQY2SLhPxZuf\u0026_nc_ad=z-m\u0026_nc_cid=0\u0026_nc_zt=23\u0026_nc_ht=scontent-lax7-1.cdninstagram.com\u0026_nc_gid=olbgeH9KZHoT8H3f71Imig\u0026_nc_ss=7a32e\u0026oh=00_Af29WV6e5rSw47tQnwHJaBcEU9XGzDxrKcF3rQAX0b4e3g\u0026oe=69E24178",
+        "post":  "https://www.instagram.com/p/DRr8y0TkURY/",
+        "width":  1440,
+        "height":  1920
+    },
+    {
+        "src":  "https://scontent-lax7-1.cdninstagram.com/v/t51.82787-15/587038763_18087484298489795_5485772302540867198_n.jpg?stp=dst-jpg_e35_tt6\u0026_nc_cat=111\u0026ig_cache_key=Mzc3MzQwNzI1Nzk3NTM0OTIyNA%3D%3D.3-ccb7-5\u0026ccb=7-5\u0026_nc_sid=58cdad\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTkyMC5zZHIuQzMifQ%3D%3D\u0026_nc_ohc=oI3HWPBhW2sQ7kNvwEEhZBO\u0026_nc_oc=AdoWvlQucXyDnrNhHxOoglUMWif8z22ec7F2llSqu5EOvGuPFN1L5oZPFJqsapX-yoA1s8CI00pFkAfGzWrc2DuV\u0026_nc_ad=z-m\u0026_nc_cid=0\u0026_nc_zt=23\u0026_nc_ht=scontent-lax7-1.cdninstagram.com\u0026_nc_gid=olbgeH9KZHoT8H3f71Imig\u0026_nc_ss=7a32e\u0026oh=00_Af0dW70e24fowg6wd6eerSO_GtwgEVZF4w31Yrv-ihSoxQ\u0026oe=69E2180E",
+        "post":  "https://www.instagram.com/p/DRd1eyGgIIT/",
+        "width":  1440,
+        "height":  1920
+    },
+    {
+        "src":  "https://scontent-lax3-1.cdninstagram.com/v/t51.82787-15/558857148_18081770600489795_8386323199545369357_n.jpg?stp=dst-jpg_e35_tt6\u0026_nc_cat=104\u0026ig_cache_key=MzczNjE4MDc5NzQ1NzE2MjM5Mw%3D%3D.3-ccb7-5\u0026ccb=7-5\u0026_nc_sid=58cdad\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTkyMC5zZHIuQzMifQ%3D%3D\u0026_nc_ohc=zWvgSWG7PScQ7kNvwHKxbui\u0026_nc_oc=AdrrbXDr51D5nQSLiR2-J9Y3CqxiriOTQe4d4VevqlR3Kp-aM4JT6tLdP2RvlzOii2xki6RcWApHc_MqvyZLWG6t\u0026_nc_ad=z-m\u0026_nc_cid=0\u0026_nc_zt=23\u0026_nc_ht=scontent-lax3-1.cdninstagram.com\u0026_nc_gid=olbgeH9KZHoT8H3f71Imig\u0026_nc_ss=7a32e\u0026oh=00_Af15HQm8MJQy-bJht-Q_t8BvWMX8Bx_zYmWyqZcMdVgocg\u0026oe=69E23CDF",
+        "post":  "https://www.instagram.com/p/DPZlKUNkdkd/",
+        "width":  1440,
+        "height":  1920
+    },
+    {
+        "src":  "https://scontent-lax7-1.cdninstagram.com/v/t51.82787-15/558939781_18081430106489795_7223288162035201213_n.jpg?stp=dst-jpg_e35_tt6\u0026_nc_cat=111\u0026ig_cache_key=MzczNDg2NjU0OTU1MjU0Njc5MA%3D%3D.3-ccb7-5\u0026ccb=7-5\u0026_nc_sid=58cdad\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTkyMC5zZHIuQzMifQ%3D%3D\u0026_nc_ohc=M_31bJsVHeQQ7kNvwGmFlYD\u0026_nc_oc=AdqXRSg0zF1ZwBGs0GqAuD_dfB8v1FFq_VO_LtJwMS-lcg7ja1YZa7vf6FFBiH-uTwdCvDqKV22D_hn64SIbW8cF\u0026_nc_ad=z-m\u0026_nc_cid=0\u0026_nc_zt=23\u0026_nc_ht=scontent-lax7-1.cdninstagram.com\u0026_nc_gid=olbgeH9KZHoT8H3f71Imig\u0026_nc_ss=7a32e\u0026oh=00_Af33CkUZyL2WQLqdrAypvncPYhWqub2P-kNv0n5ZVFpbqA\u0026oe=69E21CEF",
+        "post":  "https://www.instagram.com/p/DPU6VkrkSsi/",
+        "width":  1440,
+        "height":  1920
+    },
+    {
+        "src":  "https://scontent-lax3-2.cdninstagram.com/v/t51.82787-15/557650758_18081066095489795_7504167984486135006_n.jpg?stp=dst-jpg_e35_tt6\u0026_nc_cat=107\u0026ig_cache_key=MzczMzQyMzczMzkyNDI0MzcxOQ%3D%3D.3-ccb7-5\u0026ccb=7-5\u0026_nc_sid=58cdad\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTkyMC5zZHIuQzMifQ%3D%3D\u0026_nc_ohc=WycM3h6yND0Q7kNvwEW97xf\u0026_nc_oc=AdpPOcSPMT351skuqtGogCunP3yNWAb5rTu1yif4fLyiy5prT2S3ljSKawia45VdjokY8-CGoRK04cgd_5jXJ5pV\u0026_nc_ad=z-m\u0026_nc_cid=0\u0026_nc_zt=23\u0026_nc_ht=scontent-lax3-2.cdninstagram.com\u0026_nc_gid=olbgeH9KZHoT8H3f71Imig\u0026_nc_ss=7a32e\u0026oh=00_Af3M5hEO1cAkTP6QhH5tWOojlTbJuz3ptj2tQEDI3Om_6Q\u0026oe=69E22F3C",
+        "post":  "https://www.instagram.com/p/DPPyR2bEfNp/",
+        "width":  1440,
+        "height":  1920
+    },
+    {
+        "src":  "https://scontent-lax7-1.cdninstagram.com/v/t51.82787-15/557064920_18080854466489795_3792534056443298411_n.jpg?stp=dst-jpg_e35_tt6\u0026_nc_cat=111\u0026ig_cache_key=MzczMjMyODgwNjY2MjAzNTIzMw%3D%3D.3-ccb7-5\u0026ccb=7-5\u0026_nc_sid=58cdad\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTkyMC5zZHIuQzMifQ%3D%3D\u0026_nc_ohc=7x-P9Psis5QQ7kNvwG8jOlv\u0026_nc_oc=Ado3pVlBNBLmQcUJI79hIHKKJ6dCchMIXk8f-y2RWPnajCGemMM_NgeTUPMU0ZQb1Dn59a2f2Dim0tHU00s_6iYM\u0026_nc_ad=z-m\u0026_nc_cid=0\u0026_nc_zt=23\u0026_nc_ht=scontent-lax7-1.cdninstagram.com\u0026_nc_gid=olbgeH9KZHoT8H3f71Imig\u0026_nc_ss=7a32e\u0026oh=00_Af2onBgTfaaINml6yU2DDsGIcr-ZGo8jRedWOnVw-zbCPQ\u0026oe=69E24471",
+        "post":  "https://www.instagram.com/p/DPL5UhjjCT_/",
+        "width":  1440,
+        "height":  1920
+    },
+    {
+        "src":  "https://scontent-lax7-1.cdninstagram.com/v/t51.82787-15/531689492_18075683423489795_8852579324803117132_n.jpg?stp=dst-jpg_e35_tt6\u0026_nc_cat=105\u0026ig_cache_key=MzY5ODM4NDk3NDQ1MDc3MzU2MQ%3D%3D.3-ccb7-5\u0026ccb=7-5\u0026_nc_sid=58cdad\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTkyMC5zZHIuQzMifQ%3D%3D\u0026_nc_ohc=Z04YC1Wfvi8Q7kNvwH2hc3x\u0026_nc_oc=AdpJyQ0T30z09ZExgHC-daE6OacShz5flMO04IX6ebGBfxLxow7tHuhBcBx-98Cma3pfgsXy8FHhlKi1mcbXew_d\u0026_nc_ad=z-m\u0026_nc_cid=0\u0026_nc_zt=23\u0026_nc_ht=scontent-lax7-1.cdninstagram.com\u0026_nc_gid=olbgeH9KZHoT8H3f71Imig\u0026_nc_ss=7a32e\u0026oh=00_Af1scMYelfaWxFWCjerav4GRtwzKo7Atam-fsDrDLAsc6Q\u0026oe=69E21536",
+        "post":  "https://www.instagram.com/p/DNTTYwVRClV/",
+        "width":  1440,
+        "height":  1920
+    },
+    {
+        "src":  "https://scontent-lax3-2.cdninstagram.com/v/t51.82787-15/656278228_18104494042705737_9201809002368482492_n.jpg?stp=dst-jpg_e35_tt6\u0026_nc_cat=106\u0026ig_cache_key=MzI3MTU3MDU1OTg2MjU4MjY2NQ%3D%3D.3-ccb7-5\u0026ccb=7-5\u0026_nc_sid=58cdad\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTgwMC5zZHIuQzMifQ%3D%3D\u0026_nc_ohc=Gw298mQ3Hu8Q7kNvwFvTG8F\u0026_nc_oc=AdoRcoZaGLbLIOxGtmoHmOcxPZ9aRCsyV9EANJs2FyV6Wm65o7g-EYRcEjcfAZDBHFxM_FP_jUokULp69XETM3eT\u0026_nc_ad=z-m\u0026_nc_cid=0\u0026_nc_zt=23\u0026_nc_ht=scontent-lax3-2.cdninstagram.com\u0026_nc_gid=olbgeH9KZHoT8H3f71Imig\u0026_nc_ss=7a32e\u0026oh=00_Af380KDKqIM_B4ybcL70DcmTKvnFL1TY8dftKqKXQBZtWg\u0026oe=69E211D9",
+        "post":  "https://www.instagram.com/p/C1m9BklvJ4M/",
+        "width":  1440,
+        "height":  1800
+    },
+    {
+        "src":  "https://scontent-lax7-1.cdninstagram.com/v/t51.82787-15/655207487_18060909944377478_7567068108629496653_n.jpg?stp=dst-jpg_e35_tt6\u0026_nc_cat=101\u0026ig_cache_key=MzI0OTI1MzQ4NzQ2ODE5NzE0Mg%3D%3D.3-ccb7-5\u0026ccb=7-5\u0026_nc_sid=58cdad\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4OTU5LnNkci5DMyJ9\u0026_nc_ohc=mp8dLoWyu_sQ7kNvwE8AYZ4\u0026_nc_oc=Adq3C1h0Xxb3vEg70Ry2Y5BFI86UAOfFTZuiTmizq-p_4keV0ZRULNz9Vp5HhjdwqT64uzEYHwLtMOX4UPp1Cm6N\u0026_nc_ad=z-m\u0026_nc_cid=0\u0026_nc_zt=23\u0026_nc_ht=scontent-lax7-1.cdninstagram.com\u0026_nc_gid=olbgeH9KZHoT8H3f71Imig\u0026_nc_ss=7a32e\u0026oh=00_Af3oyVQznXNP7x0ZmeN46dZKpsCZPgUw1PJPUHP3CSqyzw\u0026oe=69E22161",
+        "post":  "https://www.instagram.com/p/C0XqtY-PViA/",
+        "width":  1440,
+        "height":  959
+    },
+    {
+        "src":  "https://scontent-lax7-1.cdninstagram.com/v/t51.82787-15/652580365_18046030652742842_3549490118871407062_n.jpg?stp=dst-jpg_e35_tt6\u0026_nc_cat=101\u0026ig_cache_key=MzIzNjEzMTU0OTMzMDY5MDQ2MA%3D%3D.3-ccb7-5\u0026ccb=7-5\u0026_nc_sid=58cdad\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTgwMC5zZHIuQzMifQ%3D%3D\u0026_nc_ohc=JI6F98bJJJ8Q7kNvwFIyXRd\u0026_nc_oc=AdoPTZ7s5BQc_4saTBRP1v03-Nu2nbfeTkvW0JvHSFdOakHmz44CIyWT0Uc02fYqk6qKXrlxg0RVs95ndBs9ycbq\u0026_nc_ad=z-m\u0026_nc_cid=0\u0026_nc_zt=23\u0026_nc_ht=scontent-lax7-1.cdninstagram.com\u0026_nc_gid=olbgeH9KZHoT8H3f71Imig\u0026_nc_ss=7a32e\u0026oh=00_Af3OIaip9vnd6DQyn9_IBI6vBAGakjJtIm6fZHKr92ryzA\u0026oe=69E224D3",
+        "post":  "https://www.instagram.com/p/CzpDIEmScOc/",
+        "width":  1440,
+        "height":  1800
+    },
+    {
+        "src":  "https://scontent-lax3-1.cdninstagram.com/v/t51.82787-15/654228116_18092970803472172_1070389894676474857_n.jpg?stp=dst-jpg_e35_tt6\u0026_nc_cat=110\u0026ig_cache_key=MzIzMjM5OTEzNjg0ODg0MzI4OQ%3D%3D.3-ccb7-5\u0026ccb=7-5\u0026_nc_sid=58cdad\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTgwMC5zZHIuQzMifQ%3D%3D\u0026_nc_ohc=DzInvG7-lRYQ7kNvwEyO3ac\u0026_nc_oc=AdpyjR-RMQ0qs6PEaHDay8Pz7ie4XH__gc7E6GOH4Y0o4t73EjlToJ7JiiPkORBqDGfLzWezmsQ3KK5PH1KH4Cw7\u0026_nc_ad=z-m\u0026_nc_cid=0\u0026_nc_zt=23\u0026_nc_ht=scontent-lax3-1.cdninstagram.com\u0026_nc_gid=cV3LX2sURh93eYllPq56ng\u0026_nc_ss=7a32e\u0026oh=00_Af0XvZz9qJkBnBjr826T__QnMUhLeyqDSMasAxKLhDU_Dg\u0026oe=69E23ED0",
+        "post":  "https://www.instagram.com/p/CzbyeWrJj7P/",
+        "width":  1440,
+        "height":  1800
+    },
+    {
+        "src":  "https://scontent-lax3-1.cdninstagram.com/v/t51.82787-15/622689036_18081558521192976_272831605707374381_n.jpg?stp=dst-jpg_e35_tt6\u0026_nc_cat=110\u0026ig_cache_key=MzIyMjk2NjIyNjM5NzY1OTE5Mw%3D%3D.3-ccb7-5\u0026ccb=7-5\u0026_nc_sid=58cdad\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTgwMC5zZHIuQzMifQ%3D%3D\u0026_nc_ohc=9rxTb8pDEgYQ7kNvwGn0eOI\u0026_nc_oc=Adq5OEWwfa-9cuIKRY4K0RCVE6fw_LxXMjHWM3teTmbbdJ1lDDCSpWF-GLX3xUhG1MHsPuBGzr1xvu2vabLNwcLp\u0026_nc_ad=z-m\u0026_nc_cid=0\u0026_nc_zt=23\u0026_nc_ht=scontent-lax3-1.cdninstagram.com\u0026_nc_gid=cV3LX2sURh93eYllPq56ng\u0026_nc_ss=7a32e\u0026oh=00_Af2yefo3wE6VYAQIVy_9_tjmINTZgJcQqrCX_lQKQ7sdwg\u0026oe=69E2198B",
+        "post":  "https://www.instagram.com/p/Cy6RrT3g4A5/",
+        "width":  1440,
+        "height":  1800
+    },
+    {
+        "src":  "https://scontent-lax3-1.cdninstagram.com/v/t51.82787-15/655216895_18098317366945526_6400690995772732460_n.jpg?stp=dst-jpg_e35_tt6\u0026_nc_cat=108\u0026ig_cache_key=MzE0NTUyMzQwMzg1ODE2NjgwMw%3D%3D.3-ccb7-5\u0026ccb=7-5\u0026_nc_sid=58cdad\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTgwMC5zZHIuQzMifQ%3D%3D\u0026_nc_ohc=UuYJIWMT8fgQ7kNvwEBtbws\u0026_nc_oc=AdrOo6oZrRgTLDQXSrqKE9oflSNXqESPDBz-rSdqOnCIxNwCq0IRNKCEJc6HoFhAOSv7oikPW192F33KlClP3Qt7\u0026_nc_ad=z-m\u0026_nc_cid=0\u0026_nc_zt=23\u0026_nc_ht=scontent-lax3-1.cdninstagram.com\u0026_nc_gid=cV3LX2sURh93eYllPq56ng\u0026_nc_ss=7a32e\u0026oh=00_Af2hniqlLhL3AdUd9zYgrIgVthIdUHPuRWLB0Y42iQ91Ow\u0026oe=69E23233",
+        "post":  "https://www.instagram.com/p/CunJOAAprrw/",
+        "width":  1440,
+        "height":  1800
+    },
+    {
+        "src":  "https://scontent-lax7-1.cdninstagram.com/v/t51.82787-15/660506652_18386734699086663_1878675789947630318_n.jpg?stp=dst-jpg_e35_tt6\u0026_nc_cat=111\u0026ig_cache_key=MzIwOTUzMDc4ODc0MjUxMDk4NA%3D%3D.3-ccb7-5\u0026ccb=7-5\u0026_nc_sid=58cdad\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTgwMC5zZHIuQzMifQ%3D%3D\u0026_nc_ohc=LQ8l31Gi38MQ7kNvwH7c7zw\u0026_nc_oc=Adp9bgLGIr__H7tIU_7VEzKggBE38Ecknz3PV0pq3BMgxnUhr61G80Ckcf_Doq9FANREYaHptK22JdOzZtnx3nXt\u0026_nc_ad=z-m\u0026_nc_cid=0\u0026_nc_zt=23\u0026_nc_ht=scontent-lax7-1.cdninstagram.com\u0026_nc_gid=cV3LX2sURh93eYllPq56ng\u0026_nc_ss=7a32e\u0026oh=00_Af3wXY6a1BursrL1c8UoqSA1zdQ4jq5DmjfSzjnweIC6NQ\u0026oe=69E23EE7",
+        "post":  "https://www.instagram.com/p/CyKi0CCLoAX/",
+        "width":  1440,
+        "height":  1800
+    },
+    {
+        "src":  "https://scontent-lax7-1.cdninstagram.com/v/t51.82787-15/654100017_18101657726300746_6302823351457270055_n.jpg?stp=dst-jpg_e35_tt6\u0026_nc_cat=111\u0026ig_cache_key=MzE0NzAyNzg0MjU2MTUwNDk3OQ%3D%3D.3-ccb7-5\u0026ccb=7-5\u0026_nc_sid=58cdad\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTgwMC5zZHIuQzMifQ%3D%3D\u0026_nc_ohc=X4tq9btrLRcQ7kNvwGVigRy\u0026_nc_oc=AdpydT0IhcZTYVh9jMymhZrV1gayALDpBJ3mXuvv4j2EpwcIiXMkq2_NoTROfg_uM5tfVHqbXsDL1JjBHJ03L-Vu\u0026_nc_ad=z-m\u0026_nc_cid=0\u0026_nc_zt=23\u0026_nc_ht=scontent-lax7-1.cdninstagram.com\u0026_nc_gid=cV3LX2sURh93eYllPq56ng\u0026_nc_ss=7a32e\u0026oh=00_Af1xEYhNnu8UqoB13W90goMMvTsiqk93gKqfmo70OvMzXQ\u0026oe=69E222D3",
+        "post":  "https://www.instagram.com/p/CutLdn3Jppp/",
+        "width":  1440,
+        "height":  1800
+    },
+    {
+        "src":  "https://scontent-lax3-1.cdninstagram.com/v/t51.82787-15/656010608_18105786433855041_2430539513434597284_n.jpg?stp=dst-jpg_e35_tt6\u0026_nc_cat=110\u0026ig_cache_key=MzIxMDg4NzY1NjQ4MDA2NDQyMw%3D%3D.3-ccb7-5\u0026ccb=7-5\u0026_nc_sid=58cdad\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTgwMC5zZHIuQzMifQ%3D%3D\u0026_nc_ohc=lIkvhoc9FWEQ7kNvwFDEKDK\u0026_nc_oc=Adr0fo3qm_SW_mziliRXKQhsYu6dTFFzCj_FCYK9DmogV-GG7NzZ0Afub1nvo-oi-tzEagRK4aJSYQPE5oNtp5BW\u0026_nc_ad=z-m\u0026_nc_cid=0\u0026_nc_zt=23\u0026_nc_ht=scontent-lax3-1.cdninstagram.com\u0026_nc_gid=cV3LX2sURh93eYllPq56ng\u0026_nc_ss=7a32e\u0026oh=00_Af0VTiey95Zp4y70KoSBgU3BV7r1ib82dvUlQVbn7qxkKQ\u0026oe=69E2127A",
+        "post":  "https://www.instagram.com/p/CyPXVExrlB8/",
+        "width":  1440,
+        "height":  1800
+    },
+    {
+        "src":  "https://scontent-lax3-1.cdninstagram.com/v/t51.82787-15/654132505_18090119267145475_2052582257264879983_n.jpg?stp=dst-jpg_e35_tt6\u0026_nc_cat=102\u0026ig_cache_key=MzEzODg3MzI3NTM1NTIxMjkzNA%3D%3D.3-ccb7-5\u0026ccb=7-5\u0026_nc_sid=58cdad\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTgwMC5zZHIuQzMifQ%3D%3D\u0026_nc_ohc=h4I-BqaaVCEQ7kNvwHC5O5o\u0026_nc_oc=Adof743HISOyTbivDGily832up2zpcjMsajPx10Db_ACOtJ-HbiL8E4UgI1lYuF1Kmp9tuEy6YNVAxw2wItLMgR-\u0026_nc_ad=z-m\u0026_nc_cid=0\u0026_nc_zt=23\u0026_nc_ht=scontent-lax3-1.cdninstagram.com\u0026_nc_gid=cV3LX2sURh93eYllPq56ng\u0026_nc_ss=7a32e\u0026oh=00_Af1IieQ81dtuh0Ji1-DXH89c1jptWhRauz3A3yQqbFdxrw\u0026oe=69E22EFE",
+        "post":  "https://www.instagram.com/p/CuPhJ5ng6JG/",
+        "width":  1440,
+        "height":  1800
+    },
+    {
+        "src":  "https://scontent-lax3-1.cdninstagram.com/v/t51.82787-15/653511913_18085695407210291_3627404637293830630_n.jpg?stp=dst-jpg_e35_tt6\u0026_nc_cat=109\u0026ig_cache_key=MzEzMjI4NTIzNjkzMTU0NTA0Mw%3D%3D.3-ccb7-5\u0026ccb=7-5\u0026_nc_sid=58cdad\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTgwMC5zZHIuQzMifQ%3D%3D\u0026_nc_ohc=wz9Rrin0qJIQ7kNvwHhWRbS\u0026_nc_oc=AdrCo8HiVEYeozdtOjLZcdv73icu7FKFmNkT7AW32XsTQ49PPnChl9Yzw5hIbeDqFPMXVlkSRnFLZxFQSU4_t3bM\u0026_nc_ad=z-m\u0026_nc_cid=0\u0026_nc_zt=23\u0026_nc_ht=scontent-lax3-1.cdninstagram.com\u0026_nc_gid=cV3LX2sURh93eYllPq56ng\u0026_nc_ss=7a32e\u0026oh=00_Af1kVCl7juznNyL1zLjzXMuxYiiAxhljXiIkRZpRMTElYA\u0026oe=69E22228",
+        "post":  "https://www.instagram.com/p/Ct4HNTlAQVa/",
+        "width":  1440,
+        "height":  1800
+    },
+    {
+        "src":  "https://scontent-lax3-2.cdninstagram.com/v/t51.82787-15/624922330_18074446454455937_4919038837526908087_n.jpg?stp=dst-jpg_e35_tt6\u0026_nc_cat=100\u0026ig_cache_key=MzA5ODIyOTMxNjc5MzA5MjkxMg%3D%3D.3-ccb7-5\u0026ccb=7-5\u0026_nc_sid=58cdad\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTgwMC5zZHIuQzMifQ%3D%3D\u0026_nc_ohc=yUfiWzDWOwQQ7kNvwE4hLM0\u0026_nc_oc=AdobemO4mw8uF2jbIKr3qpv36dlqI7pEcpB_LHuBDDL9xrqAaFPJ_x0eFT3UxoeYRijMVqtYBd_l29g75b4sR0WS\u0026_nc_ad=z-m\u0026_nc_cid=0\u0026_nc_zt=23\u0026_nc_ht=scontent-lax3-2.cdninstagram.com\u0026_nc_gid=cV3LX2sURh93eYllPq56ng\u0026_nc_ss=7a32e\u0026oh=00_Af3I0lzpwA1g4-evQSX-_zL45nV873Hv1EigqvQYPK8ySA\u0026oe=69E2210E",
+        "post":  "https://www.instagram.com/p/Cr_HyYEJ0sw/",
+        "width":  1440,
+        "height":  1800
+    },
+    {
+        "src":  "https://scontent-lax3-1.cdninstagram.com/v/t51.82787-15/657675510_18345801712245209_5777398515821277456_n.jpg?stp=dst-jpg_e35_tt6\u0026_nc_cat=109\u0026ig_cache_key=MzAxMjE4NzYyNjQ1NDUxODI3MA%3D%3D.3-ccb7-5\u0026ccb=7-5\u0026_nc_sid=58cdad\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTgwMC5zZHIuQzMifQ%3D%3D\u0026_nc_ohc=46CqP1Xlt-sQ7kNvwHjfSzW\u0026_nc_oc=AdoAzB6M_l8k8CB5J2tBNxB-guX46xu0lbxeyvUmE2iPZ6ezN0fd3HMWZ9b3IpnAaENAN5YjAYhNKNyftnzt0kD-\u0026_nc_ad=z-m\u0026_nc_cid=0\u0026_nc_zt=23\u0026_nc_ht=scontent-lax3-1.cdninstagram.com\u0026_nc_gid=cV3LX2sURh93eYllPq56ng\u0026_nc_ss=7a32e\u0026oh=00_Af0MKN6AmTeVBOTg2P-MfmAIpAPM6b9TeQkXRubEHw_LoQ\u0026oe=69E23CAE",
+        "post":  "https://www.instagram.com/p/CnNcLC_pFUW/",
+        "width":  1440,
+        "height":  1800
+    },
+    {
+        "src":  "https://scontent-lax3-2.cdninstagram.com/v/t51.82787-15/623563744_18070648082564943_5673250896881901316_n.jpg?stp=dst-jpg_e35_tt6\u0026_nc_cat=100\u0026ig_cache_key=MzAwNjM5OTAwODI4MDUyNDkxMA%3D%3D.3-ccb7-5\u0026ccb=7-5\u0026_nc_sid=58cdad\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTgwMC5zZHIuQzMifQ%3D%3D\u0026_nc_ohc=Jh6xbcjlGMQQ7kNvwHKhYE8\u0026_nc_oc=AdpTWUlhDvTSD405QWjxZ6ZRbMqsLBPjhPIy4yhjqoZvm7gQRr0_Nee4uxTU5JS9q3m0Gt0TOvec94PAFS42bvaE\u0026_nc_ad=z-m\u0026_nc_cid=0\u0026_nc_zt=23\u0026_nc_ht=scontent-lax3-2.cdninstagram.com\u0026_nc_gid=qXC0n2nXoJ9EWRzcakjlvA\u0026_nc_ss=7a32e\u0026oh=00_Af1NS1nON1PkZpV14b3S7omwbqVlp_k48HGhu6qGS4Y0kQ\u0026oe=69E212D7",
+        "post":  "https://www.instagram.com/p/Cm43_gtpbhu/",
+        "width":  1440,
+        "height":  1800
+    },
+    {
+        "src":  "https://scontent-lax7-1.cdninstagram.com/v/t51.82787-15/669569362_18103300970489795_1212754389414793417_n.jpg?stp=dst-jpg_e35_tt6\u0026_nc_cat=101\u0026ig_cache_key=Mzg3NDA5ODA2NjAwOTEzMjk3NQ%3D%3D.3-ccb7-5\u0026ccb=7-5\u0026_nc_sid=58cdad\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTkyMC5zZHIuQzMifQ%3D%3D\u0026_nc_ohc=LoczG6pqa44Q7kNvwF1hgUd\u0026_nc_oc=AdrPqoAhBbgPt-cEVzPjKORBEV6A4ipABxnicN06zj2XRV7c0V6R-j_AGDA5oqcOT7e0TAUHxbccqIjokoag1-dd\u0026_nc_ad=z-m\u0026_nc_cid=0\u0026_nc_zt=23\u0026_nc_ht=scontent-lax7-1.cdninstagram.com\u0026_nc_gid=olbgeH9KZHoT8H3f71Imig\u0026_nc_ss=7a32e\u0026oh=00_Af0g0jFvngY1xcAqJawfXu72SjV-eVg8thOVi3ujXUcqFg\u0026oe=69E23C07",
+        "post":  "https://www.instagram.com/p/DXDkBrgFJZn/",
+        "width":  1440,
+        "height":  1920
+    },
+    {
+        "src":  "https://scontent-lax3-2.cdninstagram.com/v/t51.82787-15/622419226_18093815147489795_6882131993890826485_n.jpg?stp=dst-jpg_e35_tt6\u0026_nc_cat=106\u0026ig_cache_key=MzgxODMwMDM3MjU1ODA5MDI2Ng%3D%3D.3-ccb7-5\u0026ccb=7-5\u0026_nc_sid=58cdad\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTkyMC5zZHIuQzMifQ%3D%3D\u0026_nc_ohc=qx4ZBg8TQ9sQ7kNvwF3Sq6H\u0026_nc_oc=AdrBNl9MZujy8KxU09V41OmIbjOeoxstNthObvlm0__L_zJFLKmymwd4iGfq8n6P8V6Lu1V2nJepzdE6Xzkz2FB1\u0026_nc_ad=z-m\u0026_nc_cid=0\u0026_nc_zt=23\u0026_nc_ht=scontent-lax3-2.cdninstagram.com\u0026_nc_gid=olbgeH9KZHoT8H3f71Imig\u0026_nc_ss=7a32e\u0026oh=00_Af3AinQZOe8XmerseMtuTie1M_6gbdJUz5HFzy1gS4bDJA\u0026oe=69E22E2E",
+        "post":  "https://www.instagram.com/p/DT9U_qcEWv0/",
+        "width":  1440,
+        "height":  1920
+    },
+    {
+        "src":  "https://scontent-lax3-2.cdninstagram.com/v/t51.82787-15/591141629_18088021445489795_8354061601444679670_n.jpg?stp=dst-jpg_e35_tt6\u0026_nc_cat=103\u0026ig_cache_key=Mzc3NzM4MDA3ODQwNjY5OTYyNQ%3D%3D.3-ccb7-5\u0026ccb=7-5\u0026_nc_sid=58cdad\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTkyMC5zZHIuQzMifQ%3D%3D\u0026_nc_ohc=KfWglIVMo9EQ7kNvwFGqlCc\u0026_nc_oc=Adq5kvOTnM7loOelNhw41-9nQwUy2maFuNDYr4sfoAAfV3VLQ16QT8atzkP5IenlhLdn5EhpD5crrpjC_oJRrY65\u0026_nc_ad=z-m\u0026_nc_cid=0\u0026_nc_zt=23\u0026_nc_ht=scontent-lax3-2.cdninstagram.com\u0026_nc_gid=olbgeH9KZHoT8H3f71Imig\u0026_nc_ss=7a32e\u0026oh=00_Af0UTIGYjS4WztY6Rw_PTreRKynlRzEX5_lptWabmY6O2Q\u0026oe=69E243A7",
+        "post":  "https://www.instagram.com/p/DRr8y0TkURY/",
+        "width":  1440,
+        "height":  1920
+    },
+    {
+        "src":  "https://scontent-lax3-2.cdninstagram.com/v/t51.82787-15/586852656_18087484334489795_3124900295073781526_n.jpg?stp=dst-jpg_e35_tt6\u0026_nc_cat=106\u0026ig_cache_key=Mzc3MzQwNzI1Nzk3NTMzNjQ2OA%3D%3D.3-ccb7-5\u0026ccb=7-5\u0026_nc_sid=58cdad\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTkyMC5zZHIuQzMifQ%3D%3D\u0026_nc_ohc=2Zn29ADFo1MQ7kNvwHuSCGA\u0026_nc_oc=AdrggH-5ynIrl7FQuwwUJYRAQgYzdqBlt084B-X-y-6y9QjjAruGxh6Y_-8fQ4R2IXiUZCQwaGRXHRx4G819mYoX\u0026_nc_ad=z-m\u0026_nc_cid=0\u0026_nc_zt=23\u0026_nc_ht=scontent-lax3-2.cdninstagram.com\u0026_nc_gid=olbgeH9KZHoT8H3f71Imig\u0026_nc_ss=7a32e\u0026oh=00_Af191CEktPzCm0MPmVD9DJrbdcrbzHQ224d3CruVdl3PBQ\u0026oe=69E229EE",
+        "post":  "https://www.instagram.com/p/DRd1eyGgIIT/",
+        "width":  1440,
+        "height":  1920
+    },
+    {
+        "src":  "https://scontent-lax3-2.cdninstagram.com/v/t51.82787-15/558760396_18081770609489795_5252059052161191914_n.jpg?stp=dst-jpg_e35_tt6\u0026_nc_cat=100\u0026ig_cache_key=MzczNjE4MDc5NzUzMjYyMzczMw%3D%3D.3-ccb7-5\u0026ccb=7-5\u0026_nc_sid=58cdad\u0026efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTkyMC5zZHIuQzMifQ%3D%3D\u0026_nc_ohc=vm7w2wHbOCYQ7kNvwHQl-tF\u0026_nc_oc=AdrQ7AL2ikjEiVFXy3pu84rwonxU_7GiuU2QD0nOzgiphW412f2Vj1y6mUV3q2Xc9Ak_0EwSUnDeIh_YjwW2t1QU\u0026_nc_ad=z-m\u0026_nc_cid=0\u0026_nc_zt=23\u0026_nc_ht=scontent-lax3-2.cdninstagram.com\u0026_nc_gid=olbgeH9KZHoT8H3f71Imig\u0026_nc_ss=7a32e\u0026oh=00_Af1xh9JUxv-ub3lS4bfLdvJQgA-ZZwPe9PLQjsK-4-fPmA\u0026oe=69E21E0E",
+        "post":  "https://www.instagram.com/p/DPZlKUNkdkd/",
+        "width":  1440,
+        "height":  1920
+    }
+];
+    const gallery = document.getElementById('galleryGrid');
+
+    photos.forEach((photo, index) => {
+      const card = document.createElement('article');
+      card.className = 'gallery-item';
+
+      const link = document.createElement('a');
+      link.href = photo.post;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      link.ariaLabel = `Open Instagram post ${index + 1}`;
+
+      const image = document.createElement('img');
+      image.src = photo.src;
+      image.alt = `Hallee Jenkins Photography portfolio photo ${index + 1}`;
+      image.loading = 'lazy';
+      image.decoding = 'async';
+      image.width = photo.width;
+      image.height = photo.height;
+
+      link.appendChild(image);
+      card.appendChild(link);
+      gallery.appendChild(card);
+    });
+  </script>
+</body>
+</html>
+
